@@ -87,8 +87,8 @@ class Decoder(nn.Module):
         # print('x',x.shape)
         # print('x1',x1.shape)
         
-        noise1 = torch.tensor([-0.5]).repeat(300,1,2866)
-        noise2 = torch.tensor([0.5]).repeat(300,1,2866)
+        noise1 = torch.tensor([-0.5]).repeat(240,1,2866)
+        noise2 = torch.tensor([0.5]).repeat(240,1,2866)
         noise = torch.cat([noise1,noise2],dim=0).cuda()
         # print('noise',noise.shape)
         
@@ -138,7 +138,7 @@ class AutoEncoder(nn.Module):
         return  x, y_coarse,s1
 
 if __name__ == "__main__":
-    pcs = torch.rand(100,1,2866)#.cuda()
+    pcs = torch.rand(80,1,2866)#.cuda()
     pcs1 = torch.rand(3,1,2866)#.cuda()
     # lam = torch.tensor([0.7])
     # pcs2 = torch.rand(40,3,84,84)
